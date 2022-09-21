@@ -1,0 +1,18 @@
+<p id="notice"><%= flash[:notice] %></p>
+<div>
+  <%= image_tag @user.get_image %>
+  <h2>Book detail</h2>
+  
+  <table>
+    <tbody>
+      <% @books .each do |book| %>
+      <tr>
+        <td><></td>
+        <td><a href "/books/id" %><%= books.title %></a></td>
+			  <td><%= books.body %></td>
+		  </tr>
+		  <% end %>
+    </tbody>
+    
+    <%= link_to "Edit", edit_book_path(@books.id) %> | <%= link_to "Back", books_path %>
+ 
