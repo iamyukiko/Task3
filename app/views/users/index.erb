@@ -1,4 +1,3 @@
-<!-- usersのshow ログインサインインした後に移るページ -->
 <main>
 <p id="notice"><%= flash[:notice] %></p>
 <div class="container px-5 px-sm-0">
@@ -9,30 +8,27 @@
 
      </div>
        <div class="col-md-8 offset-md-1">
-      <h2>Books</h2>
+      <h2>User</h2>
       <table class="table table-hover table-inverse">
-         <thead>
+        <thead>
           <tr>
             <th></th>
-            <th>Title</th>
-            <th>Opinion</th>
+            <th>image</th>
+            <th>name</th>
             <th colspan="3"></th>
           </tr>
         </thead>
+        <% @users.each do |user| %>
         <tbody>
-          <% @book.each do |book| %>
           <tr>
-          <td><%= link_to user_path(book.user.id) do %>
-          <%=image_tag book.user.get_profile_image(100,100) %>
-          <% end %>
-          </td>
-          <td><%= link_to book.title, book_path(book.id) %></td>
-		    	<td><%= book.body %></td>
+          <td><%=image_tag user.get_profile_image(100,100) %></td>
+          <td><%= user.name %></td>
+			    <td><%= link_to 'Show', user_path(user.id) %></td>
 		      </tr>
-		      <% end %>
        </tbody>
+       <% end %>
       </table>
+  　　</div>
   </div>
-</div>
 </div>
 </main>
