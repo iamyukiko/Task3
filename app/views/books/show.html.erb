@@ -2,21 +2,20 @@
 
 <main>
 <p id="notice"><%= flash[:notice] %></p>
-<div class="container px-5 px-sm-0">
+<div class="container">
   <div class="row">
      <div class="col-md-3">
    <%= render 'books/list', user:@user %>
    <%= render 'books/list2', booknew:@booknew %>
-
      </div>
        <div class="col-md-8 offset-md-1">
       <h2>Book detail</h2>
       <table class="table table-hover table-inverse">
-
         <tbody>
           <tr>
           <td><%= link_to user_path(@book.user.id) do %>
-          <%=image_tag @book.user.get_profile_image(100,100) %>
+          <%=image_tag @book.user.get_profile_image(100,100) %></br>
+          <%= @book.user.name %>
           <% end %>
           </td>
 			    <td><%= link_to @book.title, book_path(@book.id) %></td>
@@ -26,7 +25,7 @@
 		      </tr>
        </tbody>
       </table>
-  </div>
+      </div>
 </div>
 </div>
 </main>

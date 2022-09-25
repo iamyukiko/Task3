@@ -28,10 +28,9 @@
               <input type="submit" name="commit" value="Update Book" class="btn btn-success" data-disable-with="Create Book">
             </div>
             <% end %>
-            <% if @book.user_id == current_user.id %>
             <%= link_to "Show", book_path(@book.id) %>
             |
-            <%= link_to "back", books_path %>
+            <%= link_to "Back", books_path %>
           </div>
         </div>
       </div>
