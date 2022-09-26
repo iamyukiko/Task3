@@ -6,7 +6,7 @@
     <h2>User info</h2>
     <div id="error_explanation">
       <% if @user.errors.any? %>
-      <%= @user.errors.count %>error prohibited this obj from being saved:
+      <h3><%= @user.errors.count %> error prohibited this obj from being saved:</h3>
     <ul>
       <% @user.errors.full_messages.each do |message| %>
       <li><%= message %></li>
@@ -18,7 +18,7 @@
     <%= form_with model: @user do |f| %>
         <div class="form-group">
           <%= f.label :name %></br>
-          <%= f.text_field :name %>
+          <%= f.text_field :name, class:"form-control user_name" %>
         </div>
         <div class="form-group">
         <%= f.label :image %></br>
@@ -26,7 +26,7 @@
         </div>
         <div class="form-group">
         <%= f.label :introduction %></br>
-        <%= f.text_field :introduction %>
+        <%= f.text_area :introduction, class:"form-control user_introduction"%>
         </div>
         <div class="form-group">
         <input type="submit" name="commit" value="Update User" class="btn btn-secondary" data-disable-with="Update User">

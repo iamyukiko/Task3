@@ -1,14 +1,15 @@
 <main>
 <p id="notice"><%= flash[:notice] %></p>
 <div class="container">
+  <%= render 'books/list3', book:@booknew%>
   <div class="row">
      <div class="col-md-3">
-   <%= render 'books/list', user:@user %>
+   <%= render 'books/list', user:@user, book:@booknew%>
    <%= render 'books/list2', booknew:@booknew %>
      </div>
        <div class="col-md-8 offset-md-1">
-      <h2>User</h2>
-      <table class="table table-hover table-inverse">
+      <h2>Users</h2>
+      <table class="table">
         <thead>
           <tr>
             <th>image</th>
